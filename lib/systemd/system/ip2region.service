@@ -1,0 +1,15 @@
+[Unit]
+Description=ip2region daemon
+After=network.target syslog.target
+
+[Service]
+Type=simple
+EnvironmentFile=-/etc/ip2region.conf
+ExecStart=/usr/bin/ip2region -db $DBPATH -h $HOST -p $PORT
+ExecReload=/bin/kill -HUP $MAINPID
+KillMode=process
+Restart=always
+RestartPreventExitStatus=23
+
+[Install]
+WantedBy=multi-user.target

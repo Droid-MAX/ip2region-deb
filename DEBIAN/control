@@ -1,0 +1,8 @@
+Package: ip2region
+Version: 1.0
+Depends: systemd
+Section: utils
+Priority: optional
+Architecture: all
+Maintainer: lyy910203 <https://github.com/lyy910203/ip2region>
+Description: IP address attribution query tool.

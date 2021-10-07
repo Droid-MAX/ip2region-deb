@@ -1,0 +1,6 @@
+#!/bin/sh
+echo "Shutting down ip2region daemon service."
+if [ -f "/lib/systemd/system/ip2region.service" ] || [ -f "/etc/systemd/system/ip2region.service" ]; then
+	systemctl stop ip2region.service
+	systemctl disable ip2region.service
+fi
